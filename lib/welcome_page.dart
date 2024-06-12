@@ -37,10 +37,18 @@ class _MyWelcomePageState extends State<MyWelcomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
-            ),
-            const Text(
               'Welcome Page:',
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              ),
+              onPressed: () {
+                _incrementCounter();
+              },
+              child: const Text('Get Started'),
             ),
             Text(
               '$_counter',
