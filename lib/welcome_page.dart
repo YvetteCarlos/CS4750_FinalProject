@@ -1,3 +1,4 @@
+import 'package:dogcipher/dashboard_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,56 +13,69 @@ class MyWelcomePage extends StatefulWidget {
 }
 
 class _MyWelcomePageState extends State<MyWelcomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
+     /* appBar: AppBar(
 
         backgroundColor: Theme.of(context).colorScheme.primary,
 
         title: Text(widget.title),
-      ),
+      ),*/
       body: Center(
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Welcome Page:',
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
+            Container(
+              height: 200,
+             child: const Text(
+              'Welcome to Dogcipher! \n Learn how to better \n understand your furry \n friend!',
+              style: TextStyle(
+                fontSize: 25,
               ),
               ),
-              onPressed: () {
-                _incrementCounter();
-              },
-              child: const Text('Get Started'),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+
+            Container(
+              height: 50,
+              width: 200,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo[900],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyDashboardPage(title: 'Dashboard')),
+                  );
+                },
+                child: const Text(
+                  'Get Started',
+                  style: TextStyle(
+                    fontSize: 25,
+                   color: Colors.white
+                  ),
+              ),
+                         /* Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineMedium,*/
+              /*),*/
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+     /* floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),*/ // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
