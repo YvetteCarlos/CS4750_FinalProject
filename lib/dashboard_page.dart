@@ -1,4 +1,8 @@
+import 'package:dogcipher/dog_behaviors_page.dart';
+import 'package:dogcipher/dog_behaviors_tips.dart';
 import 'package:flutter/material.dart';
+
+import 'log_page.dart';
 
 class MyDashboardPage extends StatefulWidget {
   const MyDashboardPage({super.key, required this.title});
@@ -11,46 +15,113 @@ class MyDashboardPage extends StatefulWidget {
 }
 
 class _MyDashboardPageState extends State<MyDashboardPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-
-        backgroundColor: Theme.of(context).colorScheme.primary,
-
-        title: Text(widget.title),
-      ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have push the button this many times:',
+        backgroundColor: Colors.white,
+        title: const Text('Dashboard'),
+         actions: [
+         Container(
+           width: 150,
+           height: 200,
+           child: IconButton(
+            icon: Image.asset('assets/img.png'),
+            onPressed: null,
+                   ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+         ],
+      ),
+
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            
+            Container(
+              height: 50,
+              width: 280,
+              margin: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DogBehaviorsPage(title: 'Dog Behaviors')),
+                  );
+                },
+                child: const Text(
+                  'Translate',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              width: 280,
+              margin: const EdgeInsets.only(bottom: 20.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyLogPage(title: 'Log')),
+                  );
+                },
+                child: const Text(
+                  'Log',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              width: 280,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DogBehaviorTipsPage(title: 'Dog Behaviors Tips')),
+                  );
+                },
+                child: const Text(
+                  'Tips',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black
+                  ),
+                ),
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+

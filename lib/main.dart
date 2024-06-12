@@ -1,6 +1,8 @@
 import 'package:dogcipher/welcome_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,13 +66,19 @@ class _MySplashPageState extends State<MySplashPage> with SingleTickerProviderSt
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              child: const Text(
+              margin: EdgeInsets.all(8.0),
+              height: 200,
+              width: 200,
+              child:  const Image(
+                image: AssetImage('assets/img.png'),
+              ),
+            ),
+              const Text(
                 'DOGCIPHER',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
                     color: Colors.cyan
-                ),
               ),
             ),
           ],
