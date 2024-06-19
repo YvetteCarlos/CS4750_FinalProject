@@ -25,30 +25,34 @@ class _DogBehaviorsPageState extends State<DogBehaviorsPage> {
     return Scaffold(
       appBar: AppBar(
 
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Colors.white,
 
         title: Text(widget.title),
       ),
-      body: Center(
+      body:
+      Padding(
+        padding: const EdgeInsets.only(top: 15.0),
+        child: GridView.builder(
+          itemCount: 8,
+          gridDelegate:
+          const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 15.0,
+            crossAxisSpacing: 1.0,
+            childAspectRatio: 1.5,
 
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have push the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+          ),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.only(top:10.0, bottom: 10.0, left: 40.0, right: 40.0),
+              child: Container(
+                color: Colors.blue,
+                height: 50,
+                width: 50,
+              ),
+            );
+          },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
