@@ -10,14 +10,6 @@ class DogBehaviorsPage extends StatefulWidget {
 }
 
 class _DogBehaviorsPageState extends State<DogBehaviorsPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
