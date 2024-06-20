@@ -46,7 +46,7 @@ class _MyWelcomePageState extends State<MyWelcomePage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo[900],
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
+                  borderRadius: BorderRadius.circular(1.0),
                 ),
                 ),
                 onPressed: () {

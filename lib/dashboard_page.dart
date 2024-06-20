@@ -48,7 +48,7 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent[400],
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(1.0),
                   ),
                 ),
                 onPressed: () {
@@ -74,7 +74,7 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent[400],
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(1.0),
                   ),
                 ),
                 onPressed: () {
@@ -99,13 +99,13 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent[400],
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                    borderRadius: BorderRadius.circular(1.0),
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const DogBehaviorTipsPage(title: 'Dog Behaviors Tips')),
+                    MaterialPageRoute(builder: (context) => const DogBehaviorsTips(title: 'Dog Behaviors Tips')),
                   );
                 },
                 child: const Text(
