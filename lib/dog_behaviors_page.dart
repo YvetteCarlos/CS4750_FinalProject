@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+
 class DogBehaviorsPage extends StatefulWidget {
   const DogBehaviorsPage({super.key, required this.title});
 
@@ -33,8 +34,10 @@ class _DogBehaviorsPageState extends State<DogBehaviorsPage> {
     'Friendly',
   ];
 
+
   String selectedMeaning = '';
   String boxImagePath = 'assets/rectangle_box.png';
+
 
   void handleTap(int index) {
     setState(() {

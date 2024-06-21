@@ -1,6 +1,16 @@
+import 'package:dogcipher/friendly_page.dart';
+import 'package:dogcipher/greetings_page.dart';
+import 'package:dogcipher/needs_space_page.dart';
+import 'package:dogcipher/pretty_please_page.dart';
+import 'package:dogcipher/relaxed_page.dart';
+import 'package:dogcipher/stress_relief_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'Interested_Page.dart';
+import 'anxious_page.dart';
+const String page1 = '/Interested_Page';
+const String page2 = '/anxious_page';
 class DogBehaviorsTips extends StatefulWidget {
   const DogBehaviorsTips({super.key, required this.title});
 
@@ -22,26 +32,63 @@ class _DogBehaviorsTipsState extends State<DogBehaviorsTips> {
     'assets/dog8.png',
   ];
 
-  List<String> outputs = [
-    'Interested',
-    'Anxious',
-    'Needs Space',
-    'Stress Relief',
-    'Pretty Please',
-    'Relaxed',
-    'Greetings',
-    'Friendly',
-  ];
-
-  String selectedMeaning = '';
-  String boxImagePath = 'assets/rectangle_box.png';
 
   void handleTap(int index) {
-    setState(() {
-      selectedMeaning = outputs[index];
-    });
-    if (kDebugMode) {
-      print(outputs[index]);
+    switch(index){
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const InterestedPage(title: 'Pose Information')),
+        );
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const AnxiousPage(title: 'Pose Information')),
+        );
+        break;
+      case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const NeedsSpace(title: 'Pose Information')),
+        );
+        break;
+
+      case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const StressRelief(title: 'Pose Information')),
+        );
+        break;
+
+      case 4:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const PrettyPlease(title: 'Pose Information')),
+        );
+        break;
+
+      case 5:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const RelaxedPage(title: 'Pose Information')),
+        );
+        break;
+
+      case 6:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const GreetingsPage(title: 'Pose Information')),
+        );
+        break;
+
+      case 7:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const FriendlyPage(title: 'Pose Information')),
+        );
+        break;
+
+
     }
   }
 
