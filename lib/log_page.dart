@@ -1,3 +1,4 @@
+import 'package:dogcipher/edit_note_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -28,9 +29,12 @@ class _MyLogPageState extends State<MyLogPage> {
             alignment: Alignment.topRight,
             margin: const EdgeInsets.only(right: 20.0),
             child: ElevatedButton(
-            onPressed: () {
-            print('Button pressed');
-            },
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const EditNotePage(title: 'Log')),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueAccent[700],
                 shape: RoundedRectangleBorder(

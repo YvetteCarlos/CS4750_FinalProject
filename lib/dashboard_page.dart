@@ -2,6 +2,7 @@ import 'package:dogcipher/dog_behaviors_page.dart';
 import 'package:dogcipher/dog_behaviors_tips.dart';
 import 'package:flutter/material.dart';
 
+import 'edit_note_page.dart';
 import 'log_page.dart';
 
 class MyDashboardPage extends StatefulWidget {
@@ -80,7 +81,7 @@ class _MyDashboardPageState extends State<MyDashboardPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const MyLogPage(title: 'Log')),
+                    MaterialPageRoute(builder: (context) => const EditNotePage(title: 'Log')),
                   );
                 },
                 child: const Text(
