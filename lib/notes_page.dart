@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:dogcipher/models/note_model.dart';
+import 'package:dogcipher/widgets/note_card.dart';
 import 'package:flutter/material.dart';
 
-import 'log_page.dart';
+import 'create_notes.dart';
 
 
 class EditNotePage extends StatefulWidget {
@@ -15,6 +16,23 @@ class EditNotePage extends StatefulWidget {
 }
 
 class _EditNotePageState extends State<EditNotePage> {
+
+  List<Note> notes = List.empty(growable: true);
+
+  void onNewNoteCreated(Note note){
+    notes.add(note);
+    setState(() {
+    });
+
+  }
+
+  void onNoteDeleted(int index){
+    notes.removeAt(index);
+    setState(() {
+
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,30 +48,27 @@ class _EditNotePageState extends State<EditNotePage> {
           onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MyLogPage(title: 'Log')),
+              MaterialPageRoute(builder: (context) => MyLogPage(onNewNoteCreated: onNewNoteCreated,)),
             );
           },
           tooltip: 'Increment',
-          child: const Icon(Icons.add),
            backgroundColor: Colors.white,
            foregroundColor: Colors.black,
            shape: RoundedRectangleBorder(
              borderRadius: BorderRadius.circular(50.0),
              side: const BorderSide(color: Colors.black, width:3.0 ),
            ),
+          child: const Icon(Icons.add),
         ),
         ),
       ],
      ),
       backgroundColor: Colors.white,
-      body:const Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-          ],
-        ),
+      body:ListView.builder(
+        itemCount: notes.length,
+        itemBuilder: (context, index){
+          return NoteCard(note: notes[index], index: index, onNoteDeleted: onNoteDeleted);
+        },
       ),
      /* */// This trailing comma makes auto-formatting nicer for build methods.
     );

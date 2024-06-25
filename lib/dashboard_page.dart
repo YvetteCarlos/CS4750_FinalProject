@@ -2,8 +2,8 @@ import 'package:dogcipher/dog_behaviors_page.dart';
 import 'package:dogcipher/dog_behaviors_tips.dart';
 import 'package:flutter/material.dart';
 
-import 'edit_note_page.dart';
-import 'log_page.dart';
+import 'notes_page.dart';
+import 'create_notes.dart';
 
 class MyDashboardPage extends StatefulWidget {
   const MyDashboardPage({super.key, required this.title});
