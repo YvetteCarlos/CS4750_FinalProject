@@ -19,6 +19,12 @@ class _EditNotePageState extends State<EditNotePage> {
 
   List<Note> notes = List.empty(growable: true);
 
+  void onNoteUpdated(int index, Note updatedNote) {
+    setState(() {
+      notes[index] = updatedNote;
+    });
+  }
+
   void onNewNoteCreated(Note note){
     notes.add(note);
     setState(() {
@@ -67,7 +73,7 @@ class _EditNotePageState extends State<EditNotePage> {
       body:ListView.builder(
         itemCount: notes.length,
         itemBuilder: (context, index){
-          return NoteCard(note: notes[index], index: index, onNoteDeleted: onNoteDeleted);
+          return NoteCard(note: notes[index], index: index, onNoteDeleted: onNoteDeleted, onNoteUpdated: onNoteUpdated,);
         },
       ),
      /* */// This trailing comma makes auto-formatting nicer for build methods.

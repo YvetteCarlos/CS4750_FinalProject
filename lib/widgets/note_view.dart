@@ -1,13 +1,57 @@
 import 'package:dogcipher/models/note_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NoteView extends StatelessWidget {
-  const NoteView({super.key, required this.note, required this.index, required this.onNoteDeleted});
+class NoteView extends StatefulWidget {
+  const NoteView(
+      {super.key, required this.note, required this.index, required this.onNoteDeleted, required this.onNoteUpdated});
 
   final Note note;
   final int index;
   final Function(int) onNoteDeleted;
+  final Function(int, Note) onNoteUpdated;
+
+  @override
+  _NoteViewState createState() => _NoteViewState();
+}
+
+  class _NoteViewState extends State<NoteView>{
+    late TextEditingController _titleController;
+    late TextEditingController _dateController;
+    late TextEditingController _dogController;
+    late TextEditingController _potController;
+    bool _isEditing = false;
+
+  @override
+  void initState(){
+    super.initState();
+    _titleController = TextEditingController(text: widget.note.title);
+    _dateController = TextEditingController(text: widget.note.date);
+    _dogController = TextEditingController(text: widget.note.dog);
+    _potController = TextEditingController(text: widget.note.pot);
+  }
+
+  @override
+  void dispose(){
+    _titleController.dispose();
+    _dateController.dispose();
+    _dogController.dispose();
+    _potController.dispose();
+    super.dispose();
+
+  }
+
+  void _saveChanges(){
+    setState(() {
+      Note updatedNote = Note(
+        title: _titleController.text,
+        date: _dateController.text,
+        dog: _dogController.text,
+        pot: _potController.text,
+      );
+      widget.onNoteUpdated(widget.index, updatedNote);
+      Navigator.of(context).pop();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +69,7 @@ class NoteView extends StatelessWidget {
             margin: const EdgeInsets.only(right: 10.0),
             child: ElevatedButton(
               onPressed: () {
-              null;
+              _saveChanges();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueAccent[700],
@@ -52,7 +96,9 @@ class NoteView extends StatelessWidget {
             margin: const EdgeInsets.only(right: 15.0),
             child: ElevatedButton(
               onPressed: () {
-                null;
+                setState(() {
+                  _isEditing = !_isEditing;
+                });
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueAccent[700],
@@ -91,81 +137,88 @@ class NoteView extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                       Text(
-                        'Title:${note.title}',
-                        style: const TextStyle(
+                       const Text(
+                        'Title:',
+                        style: TextStyle(
                           fontSize: 24,
                         ),
                       ),
                       Expanded(
                         child: TextFormField(
+                          controller: _titleController,
                           style: const TextStyle(
                             fontSize: 24,
                           ),
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                          enabled: _isEditing,
                         ),
                       ),
                     ],
                   ),
                   Row(
                     children: [
-                     Text(
-                        'Date:${note.date}',
-                        style: const TextStyle(
+                     const Text(
+                        'Date:',
+                        style: TextStyle(
                           fontSize: 24,
                         ),
                       ),
                       Expanded(
                         child: TextFormField(
-                          readOnly: true,
+                          controller: _dateController,
                           style: const TextStyle(
                             fontSize: 24,
                           ),
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                            enabled: _isEditing,
                         ),
                       ),
                     ],
                   ),
                   Row(
                     children: [
-                      Text(
-                        'Dog Behavior:${note.dog}',
-                        style: const TextStyle(
+                      const Text(
+                        'Dog Behavior:',
+                        style: TextStyle(
                           fontSize: 24,
                         ),
                       ),
                       Expanded(
                         child: TextFormField(
+                          controller: _dogController,
                           style: const TextStyle(
                             fontSize: 24,
                           ),
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                          enabled: _isEditing,
                         ),
                       ),
                     ],
                   ),
                   Row(
                     children: [
-                      Text(
-                        'Potential Causes:${note.pot}',
-                        style: const TextStyle(
+                      const Text(
+                        'Potential Causes:',
+                        style: TextStyle(
                           fontSize: 24,
                         ),
                       ),
                       Expanded(
                         child: TextFormField(
+                          controller: _potController,
                           style: const TextStyle(
                             fontSize: 24,
                           ),
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                          enabled: _isEditing,
                         ),
                       ),
                     ],

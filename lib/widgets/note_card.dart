@@ -4,18 +4,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NoteCard extends StatelessWidget {
-  const NoteCard({super.key, required this.note, required this.index, required this.onNoteDeleted});
+  const NoteCard({super.key, required this.note, required this.index, required this.onNoteDeleted, required this.onNoteUpdated});
   final Note note;
   final int index;
-
+  final Function(int, Note) onNoteUpdated;
   final Function(int) onNoteDeleted;
+
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-
-         Navigator.of(context).push(MaterialPageRoute(builder: (context) => NoteView(note: note,index: index, onNoteDeleted: onNoteDeleted)));
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => NoteView(note: note, index: index, onNoteDeleted: onNoteDeleted, onNoteUpdated: onNoteUpdated,
+          ),
+        ));
       },
       child: Container(
         height: 70,
@@ -66,7 +69,6 @@ class NoteCard extends StatelessWidget {
               onPressed: (){
               Navigator.of(context).pop();
               onNoteDeleted(index);
-              Navigator.of(context).pop();
               },
             child: const Text('Delete'),
           ),
