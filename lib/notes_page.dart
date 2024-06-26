@@ -1,8 +1,10 @@
 import 'package:dogcipher/models/note_model.dart';
 import 'package:dogcipher/widgets/note_card.dart';
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'create_notes.dart';
+import 'dart:convert';
+
 
 
 class EditNotePage extends StatefulWidget {
@@ -18,24 +20,46 @@ class EditNotePage extends StatefulWidget {
 class _EditNotePageState extends State<EditNotePage> {
 
   List<Note> notes = List.empty(growable: true);
+  @override
+  void initState() {
+    super.initState();
+    _loadNotes();
+  }
+
+  void _loadNotes() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      notes = prefs.getStringList('notes')?.map((item) => Note.fromJson(jsonDecode(item))).toList() ?? [];
+    });
+  }
+
+  void _saveNotes() async {
+      final prefs = await SharedPreferences.getInstance();
+      List<String> serializedNotes = notes.map((note) => jsonEncode(note.toJson())).toList();
+      await prefs.setStringList('notes', serializedNotes);
+  }
 
   void onNoteUpdated(int index, Note updatedNote) {
     setState(() {
       notes[index] = updatedNote;
+      _saveNotes();
     });
   }
 
   void onNewNoteCreated(Note note){
-    notes.add(note);
+
     setState(() {
+      notes.add(note);
+      _saveNotes();
     });
 
   }
 
   void onNoteDeleted(int index){
-    notes.removeAt(index);
-    setState(() {
 
+    setState(() {
+      notes.removeAt(index);
+      _saveNotes();
     });
 
   }
@@ -57,7 +81,6 @@ class _EditNotePageState extends State<EditNotePage> {
               MaterialPageRoute(builder: (context) => MyLogPage(onNewNoteCreated: onNewNoteCreated,)),
             );
           },
-          tooltip: 'Increment',
            backgroundColor: Colors.white,
            foregroundColor: Colors.black,
            shape: RoundedRectangleBorder(
