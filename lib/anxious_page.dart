@@ -61,7 +61,7 @@ class _AnxiousPageState extends State<AnxiousPage> {
                   top: 35,
                   left: 25,
                   child: Text(
-                    'Body language:\n- Alert Eyes\n- Ears Perked\n- Facing Forward\n Tips: If your dog\n  displays this\n  behavior, observe\n  the culprits.',
+                    'Body language:\n- Tail Between Legs\n- Ears Back\n Tips: If your dog\n  displays this\n  behavior, take\n  things slow.',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,

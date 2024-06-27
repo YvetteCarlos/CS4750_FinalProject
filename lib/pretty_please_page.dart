@@ -59,7 +59,7 @@ class _PrettyPleaseState extends State<PrettyPlease> {
                   top: 35,
                   left: 25,
                   child: Text(
-                    'Body language:\n- Alert Eyes\n- Ears Perked\n- Facing Forward\n Tips: If your dog\n  displays this\n  behavior, observe\n  the culprits.',
+                    'Body language:\n- Puppy Face\n- Ears Down\n- Eyes Looking Up\n Tips: If your dog\n  displays this\n  behavior, assess \n  your dogs wants.',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,

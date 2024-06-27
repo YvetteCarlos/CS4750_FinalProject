@@ -59,7 +59,7 @@ class _RelaxedPageState extends State<RelaxedPage> {
                   top: 35,
                   left: 25,
                   child: Text(
-                    'Body language:\n- Alert Eyes\n- Ears Perked\n- Facing Forward\n Tips: If your dog\n  displays this\n  behavior, observe\n  the culprits.',
+                    'Body language:\n- Belly Rub Pose\n Tips: Your dog is\n  either showing\n  affection, has \n  an itch, submitting,\n  or feels safe.',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,

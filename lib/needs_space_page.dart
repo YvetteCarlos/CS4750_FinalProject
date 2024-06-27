@@ -59,7 +59,7 @@ class _NeedsSpaceState extends State<NeedsSpace> {
                   top: 35,
                   left: 25,
                   child: Text(
-                    'Body language:\n- Alert Eyes\n- Ears Perked\n- Facing Forward\n Tips: If your dog\n  displays this\n  behavior, observe\n  the culprits.',
+                    'Body language:\n- Whale Eyes\n- Head Lowered\n- Freezing\n Tips: If your dog\n  displays this\n  behavior, create a\n  calm space for them.',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,

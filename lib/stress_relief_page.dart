@@ -59,7 +59,7 @@ class _StressReliefState extends State<StressRelief> {
                   top: 35,
                   left: 25,
                   child: Text(
-                    'Body language:\n- Alert Eyes\n- Ears Perked\n- Facing Forward\n Tips: If your dog\n  displays this\n  behavior, observe\n  the culprits.',
+                    'Body language:\n- The Shake Off\n Tips: A positive way \n  your dog deals with\n  stress, reward\n  your dog.',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,

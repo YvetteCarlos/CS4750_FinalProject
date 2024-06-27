@@ -59,7 +59,7 @@ class _GreetingsPageState extends State<GreetingsPage> {
                   top: 35,
                   left: 25,
                   child: Text(
-                    'Body language:\n- Alert Eyes\n- Ears Perked\n- Facing Forward\n Tips: If your dog\n  displays this\n  behavior, observe\n  the culprits.',
+                    'Body language:\n- Downward Stretch\n- Wagging Tail\n Tips: If your dog\n  displays this\n  behavior, this could \n  mean they are happy\n  or want to play.',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 24,
