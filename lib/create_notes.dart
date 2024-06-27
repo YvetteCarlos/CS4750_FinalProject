@@ -90,16 +90,17 @@ import 'package:flutter/material.dart';
                           fontSize: 24,
                         ),
                       ),
-                      Expanded(
-                        child: TextFormField(
-                          controller: titleController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                         Expanded(
+                          child: TextFormField(
+                            controller: titleController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLines: 1,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                        ),
                       ),
                     ],
                   ),
@@ -120,6 +121,7 @@ import 'package:flutter/material.dart';
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                          maxLines: 1,
                         ),
                       ),
                     ],
@@ -141,6 +143,7 @@ import 'package:flutter/material.dart';
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                          maxLines: 1,
                         ),
                       ),
                     ],
@@ -162,6 +165,7 @@ import 'package:flutter/material.dart';
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
+                          maxLines: 1,
                         ),
                       ),
                     ],
