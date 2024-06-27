@@ -1,4 +1,4 @@
-import 'package:dogcipher/notes_page.dart';
+
 import 'package:dogcipher/models/note_model.dart';
 import 'package:flutter/material.dart';
 
@@ -91,15 +91,18 @@ import 'package:flutter/material.dart';
                         ),
                       ),
                          Expanded(
-                          child: TextFormField(
-                            controller: titleController,
-                            style: const TextStyle(
-                              fontSize: 24,
+                          child: Container(
+                            margin: const EdgeInsets.only(top:25.0),
+                            child: TextFormField(
+                              controller: titleController,
+                              style: const TextStyle(
+                                fontSize: 24,
+                              ),
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                              ),
+                              maxLength: 25,
                             ),
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                            ),
-                            maxLines: 1,
                           ),
                       ),
                     ],
@@ -113,15 +116,18 @@ import 'package:flutter/material.dart';
                         ),
                       ),
                       Expanded(
-                        child: TextFormField(
-                          controller: dateController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                        child: Container(
+                          margin: EdgeInsets.only(top:25.0),
+                          child: TextFormField(
+                            controller: dateController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLength: 25,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          maxLines: 1,
                         ),
                       ),
                     ],
@@ -135,15 +141,18 @@ import 'package:flutter/material.dart';
                         ),
                       ),
                       Expanded(
-                        child: TextFormField(
-                          controller: dogController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                        child: Container(
+                          margin: const EdgeInsets.only(top:25.0),
+                          child: TextFormField(
+                            controller: dogController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLength: 25,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          maxLines: 1,
                         ),
                       ),
                     ],
@@ -151,21 +160,24 @@ import 'package:flutter/material.dart';
                   Row(
                     children: [
                       const Text(
-                        'Potential Causes:',
+                        'Causes:',
                         style: TextStyle(
                           fontSize: 24,
                         ),
                       ),
                       Expanded(
-                        child: TextFormField(
-                          controller: potController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                        child: Container(
+                          margin: const EdgeInsets.only(top:25.0),
+                          child: TextFormField(
+                            controller: potController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLength: 25,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          maxLines: 1,
                         ),
                       ),
                     ],

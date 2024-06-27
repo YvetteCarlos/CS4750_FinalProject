@@ -38,10 +38,12 @@ class NoteCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  margin: const EdgeInsets.only(left: 10.0),
                   child: Text(
                     note.title,
                     style: const TextStyle(
                       fontSize: 24,
+                      fontWeight: FontWeight.bold,
 
                     ),
                     maxLines: 2,
