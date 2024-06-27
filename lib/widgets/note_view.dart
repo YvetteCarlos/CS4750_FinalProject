@@ -143,18 +143,22 @@ class NoteView extends StatefulWidget {
                           fontSize: 24,
                         ),
                       ),
-                      Expanded(
-                        child: TextFormField(
-                          controller: _titleController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                         Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.only(top:25.0),
+                            child: TextFormField(
+                              controller: _titleController,
+                              style: const TextStyle(
+                                fontSize: 24,
+                              ),
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                              ),
+                              maxLength: 25,
+                              enabled: _isEditing,
+                            ),
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          enabled: _isEditing,
                         ),
-                      ),
                     ],
                   ),
                   Row(
@@ -166,15 +170,19 @@ class NoteView extends StatefulWidget {
                         ),
                       ),
                       Expanded(
-                        child: TextFormField(
-                          controller: _dateController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                        child: Container(
+                          margin: const EdgeInsets.only(top:25.0),
+                          child: TextFormField(
+                            controller: _dateController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLength: 25,
+                              enabled: _isEditing,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                            enabled: _isEditing,
                         ),
                       ),
                     ],
@@ -188,15 +196,19 @@ class NoteView extends StatefulWidget {
                         ),
                       ),
                       Expanded(
-                        child: TextFormField(
-                          controller: _dogController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                        child: Container(
+                          margin: const EdgeInsets.only(top:25.0),
+                          child: TextFormField(
+                            controller: _dogController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLength: 25,
+                            enabled: _isEditing,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          enabled: _isEditing,
                         ),
                       ),
                     ],
@@ -204,21 +216,25 @@ class NoteView extends StatefulWidget {
                   Row(
                     children: [
                       const Text(
-                        'Potential Causes:',
+                        'Causes:',
                         style: TextStyle(
                           fontSize: 24,
                         ),
                       ),
                       Expanded(
-                        child: TextFormField(
-                          controller: _potController,
-                          style: const TextStyle(
-                            fontSize: 24,
+                        child: Container(
+                          margin: const EdgeInsets.only(top:25.0),
+                          child: TextFormField(
+                            controller: _potController,
+                            style: const TextStyle(
+                              fontSize: 24,
+                            ),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                            maxLength: 25,
+                            enabled: _isEditing,
                           ),
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          enabled: _isEditing,
                         ),
                       ),
                     ],
