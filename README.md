@@ -11,5 +11,7 @@ Idea Description: A dog body language translator app that explains to you what y
 How to Use: Use Dashboard components, such:
 
   -Translate: to translate your dogs body language
+  
   -Log: To log notes about your dogs body language. You may save and edit, as well as delete these notes as you wish.
+ 
   -Tips: to get information and tips about each dog body language
