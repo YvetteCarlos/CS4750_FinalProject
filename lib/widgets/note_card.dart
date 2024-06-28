@@ -61,10 +61,10 @@ class NoteCard extends StatelessWidget {
           builder: (context){
             return AlertDialog(
               title: const Text(
-              'Delete?'
+              'Are you sure you want to delete?'
               ),
             content: Text(
-            'Note ${note.title} will be deleted.'
+            'Note "${note.title}" will be deleted.'
               ),
             actions: [
             TextButton(

@@ -75,7 +75,7 @@ class _DogBehaviorsPageState extends State<DogBehaviorsPage> {
                       handleTap(index);
                     },
                     child: Card(
-                      elevation: 5.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(1.0),
                       ),
