@@ -4,13 +4,11 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+App name: Dogcipher - Dog Body Language Translator
 
-A few resources to get you started if this is your first Flutter project:
+Idea Description: A dog body language translator app that explains to you what your dog's body language means, to create a better understanding as well as a strong bond between you and your pet. The app provides you with an easy-to-use guide for interpreting your dog's body language. In this app, you can log your dog's body language, add a note, and receive feedback with tips about what your dog's potential needs are.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+How to Use: Use Dashboard components, such as:
+-Translate: to translate your dogs body language
+-Log: To log notes about your dogs body language. You may save and edit, as well as delete these notes as you wish.
+-Tips: to get information and tips about each dog body language
